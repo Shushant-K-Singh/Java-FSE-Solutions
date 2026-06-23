@@ -1,8 +1,9 @@
 package Design_Patterns_And_Principles.Mandatory.FactoryMethodPatternExample;
 
-public class PdfDocument implements Document{
+public class PdfDocumentFactory extends DocumentFactory{
     
-    public void create(){
-        System.out.println("PDF Document Created");
+    @Override
+    public Document createDocument(){
+        return new PdfDocument();
     }
 }
