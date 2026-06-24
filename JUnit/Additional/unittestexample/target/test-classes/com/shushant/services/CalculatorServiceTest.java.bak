@@ -1,49 +1,49 @@
-package com.shushant.services;
+// package com.shushant.services;
 
-import org.junit.Test;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
+// import org.junit.Test;
+// import org.junit.After;
+// import org.junit.AfterClass;
+// import org.junit.Assert;
+// import org.junit.Before;
+// import org.junit.BeforeClass;
   
 
-public class CalculatorServiceTest {
+// public class CalculatorServiceTest {
 
-    @BeforeClass // annoted method will be executed before any method eg:- if we want to create object of any class then we can use beforeClass int this method we can create object so that, that method will be taken in use for further tasks
-    public static void print(){
-        System.out.println("I am using before Class annotation");
-        System.out.println("i will be running before any test");
+//     @BeforeClass // annoted method will be executed before any method eg:- if we want to create object of any class then we can use beforeClass int this method we can create object so that, that method will be taken in use for further tasks
+//     public static void print(){
+//         System.out.println("I am using before Class annotation");
+//         System.out.println("i will be running before any test");
         
-    }
+//     }
 
-    @Before
-    public void beforeEach(){
-        System.out.println("Execute before each and every test method"); 
-    }
+//     @Before
+//     public void beforeEach(){
+//         System.out.println("Execute before each and every test method"); 
+//     }
 
-    @Test
-    public void addTwoNumbersTest(){
-        int result = CalculatorService.addTwoNumbers(20,10);
+//     @Test
+//     public void addTwoNumbersTest(){
+//         int result = CalculatorService.addTwoNumbers(20,10);
         
-        // Assert.assertEquals(expected, result)
-        Assert.assertEquals(30, result);
-    }
+//         // Assert.assertEquals(expected, result)
+//         Assert.assertEquals(30, result);
+//     }
  
-    @Test
-    public void  productTwoNumbersTest(){
-        int result = CalculatorService.productTwoNumbers(3, 6);
-        Assert.assertEquals(18, result);
-    }
+//     @Test
+//     public void  productTwoNumbersTest(){
+//         int result = CalculatorService.productTwoNumbers(3, 6);
+//         Assert.assertEquals(18, result);
+//     }
 
-    @After
-    public void afterEach(){
-        System.out.println("Execute after each and every Test"); 
-    }
+//     @After
+//     public void afterEach(){
+//         System.out.println("Execute after each and every Test"); 
+//     }
 
-    @AfterClass
-    public static void cleanup(){
-        System.out.println("After all test cases");
-        System.out.println("End test cases: "+ new Date());
-    }
-}
+//     @AfterClass
+//     public static void cleanup(){
+//         System.out.println("After all test cases");
+//         System.out.println("End test cases: "+ new Date());
+//     }
+// }
