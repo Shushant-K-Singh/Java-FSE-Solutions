@@ -22,5 +22,5 @@ public class ArrangeActAssert {
         int b = 3;
         int result = a + b;
         assertEquals(5, result);
-    }
+    }   
 }
