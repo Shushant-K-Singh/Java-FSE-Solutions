@@ -1,0 +1,104 @@
+1. JPA (Java Persistence API)
+What is JPA?
+
+JPA is a specification (set of interfaces and standards) for Object-Relational Mapping (ORM) in Java.
+
+It defines how Java objects should be mapped to database tables, but it does not provide an implementation.
+
+JPA includes annotations and interfaces such as:
+
+@Entity
+@Table
+@Id
+EntityManager
+
+Example:
+
+@Entity
+public class Employee {
+
+    @Id
+    private int id;
+
+    private String name;
+}
+
+These annotations are part of the JPA specification.
+
+Key Points
+It is a specification, not a framework.
+It cannot communicate with the database by itself.
+It requires an implementation like Hibernate or EclipseLink.
+
+2. Hibernate
+What is Hibernate?
+
+Hibernate is an ORM framework and the most popular implementation of JPA.
+
+It implements all the JPA interfaces and actually performs the database operations.
+
+For example, when you save an object:
+
+session.save(employee);
+
+Hibernate automatically generates SQL like:
+
+INSERT INTO employee VALUES (...);
+
+and executes it against the database.
+
+Hibernate Features
+ORM support
+Automatic SQL generation
+Caching
+Lazy Loading
+Dirty Checking
+HQL (Hibernate Query Language)
+Transaction Management
+Without Spring
+
+Using Hibernate directly requires more configuration.
+
+Session session = sessionFactory.openSession();
+
+Transaction tx = session.beginTransaction();
+
+session.save(employee);
+
+tx.commit();
+
+session.close();
+
+3. Spring Data JPA
+What is Spring Data JPA?
+
+Spring Data JPA is a Spring module built on top of JPA.
+
+It simplifies database access by eliminating most of the boilerplate code.
+
+Instead of writing DAO classes and manually handling EntityManager or Session, you simply create a repository interface.
+
+Example:
+
+public interface EmployeeRepository
+        extends JpaRepository<Employee, Integer> {
+
+}
+
+Now you automatically get methods like:
+
+repository.save(employee);
+
+repository.findById(1);
+
+repository.findAll();
+
+repository.delete(employee);
+
+You don't have to implement these methods.
+
+Internally:
+
+Spring Data JPA calls Hibernate.
+Hibernate generates SQL.
+SQL is executed using JDBC.
